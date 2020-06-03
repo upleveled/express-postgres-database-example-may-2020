@@ -19,18 +19,13 @@ Follow the instructions from the PostgreSQL step in [UpLeveled's System Setup In
 Run the following queries inside of `psql` to set up the database and the user:
 
 ```sql
-CREATE DATABASE express;
-CREATE USER express WITH ENCRYPTED PASSWORD 'express';
-GRANT ALL PRIVILEGES ON DATABASE express TO express;
+CREATE DATABASE <database name>;
+CREATE USER <user name> WITH ENCRYPTED PASSWORD '<user password>';
+GRANT ALL PRIVILEGES ON DATABASE <database name> TO <user name>;
 ```
 
 Then, to connect to the data base using this new user:
 
 ```sh
-psql -U express_may_2020 express_may_2020
+psql -U <user name> <database name>
 ```
-
-<!--
-SET ROLE express;
-\connect express;
--->
