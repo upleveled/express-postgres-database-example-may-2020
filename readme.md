@@ -27,5 +27,6 @@ GRANT ALL PRIVILEGES ON DATABASE <database name> TO <user name>;
 Then, to connect to the data base using this new user:
 
 ```sh
+exit
 psql -U <user name> <database name>
 ```
