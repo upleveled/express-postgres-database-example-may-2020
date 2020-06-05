@@ -9,6 +9,10 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "ley": "^0.5.0",
+    "nodemon": "^2.0.4",
     "postgres": "^1.0.2"
+  },
+  "scripts": {
+    "start": "nodemon index.js"
   }
 }
