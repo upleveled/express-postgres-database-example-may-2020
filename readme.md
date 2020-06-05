@@ -24,7 +24,7 @@ CREATE USER <user name> WITH ENCRYPTED PASSWORD '<user password>';
 GRANT ALL PRIVILEGES ON DATABASE <database name> TO <user name>;
 ```
 
-Then, to connect to the data base using this new user:
+Then, to connect to the database using this new user:
 
 ```sh
 exit
