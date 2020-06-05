@@ -1,16 +1,13 @@
 require('dotenv').config();
 
 const express = require('express');
-const postgres = require('postgres');
+const { getUsers, getUserById } = require('./db.js');
+
 const app = express();
 const port = 3000;
 
-const sql = postgres();
-
 app.get('/', async (req, res) => {
-  const users = await sql`
-    select * from users
-  `;
+  const users = await getUsers();
 
   // const users =  [
   //   {id: 1, first_name: 'Abdullah', last_name: 'Abdularaihm', role: 'admin', slug: 'abdullah-abdularaihm' }
@@ -37,10 +34,7 @@ app.get('/', async (req, res) => {
 app.get('/users/:userId', async function usersHandler(req, res) {
   const userId = req.params.userId;
 
-  const user = await sql`
-    select * from users where id = ${userId}
-  `;
-
+  const user = await getUserById(userId);
   // console.log(user);
 
   if (user.count === 0) {
