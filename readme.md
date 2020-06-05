@@ -24,9 +24,9 @@ CREATE USER <user name> WITH ENCRYPTED PASSWORD '<user password>';
 GRANT ALL PRIVILEGES ON DATABASE <database name> TO <user name>;
 ```
 
-Then, to connect to the database using this new user:
+Then, to connect to the database using this new user, quit `psql` and reconnect:
 
 ```sh
-exit
+\q
 psql -U <user name> <database name>
 ```
